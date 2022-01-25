@@ -12,6 +12,7 @@ import { useLocalStorage } from 'react-use';
 import Tweet from '@components/ui/Tweet';
 import { getTweets } from '@lib/twitter';
 import { FaMarkdown, FaReact } from 'react-icons/fa';
+import { NextSeo } from 'next-seo';
 
 export default function Home({ tweets }) {
   const [value, setValue] = useLocalStorage('refresh', false);
@@ -27,10 +28,10 @@ export default function Home({ tweets }) {
 
   return (
     <div className="bg-gray-900">
-      <Head>
-        <title>Beautiful STEM Publications — Lumiere</title>
-        <meta name="description" content="Lumiere website" />
-      </Head>
+  <NextSeo
+      title="Lumiere - MDX editor for Techinal/Stem Research"
+      description="Discover, Publish and Create Techinal and STEM content with MDX"
+    />
 
       <Header pageType="home" />
 
@@ -147,6 +148,8 @@ export default function Home({ tweets }) {
 
       <Footer />
     </div>
+
+    
   );
 }
 
